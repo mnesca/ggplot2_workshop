@@ -14,7 +14,8 @@ DIABETES_CLASS <- read_xlsx(here::here("Data","diabetes_study_0138.xlsx"),sheet=
 
 
 #Filter out missing observation - complete case analysis
-DIABETES_CLASS <- DIABETES_CLASS %>% filter(!sex=="Unknown/Invalid" & !admin_type == "Missing" & !admin_type == "Other")
+DIABETES_CLASS <- DIABETES_CLASS %>% 
+  filter(!sex=="Unknown/Invalid" & !admin_type == "Missing" & !admin_type == "Other")
 
 
 ## Example 1
@@ -59,12 +60,10 @@ ggplot(DIABETES_SAMPLE,aes(x=age, y=num_lab_procedures, color=admin_type, shape=
            y=c(100,95,90),
            label = c("Elective=109", "Emergency=296", "Urgent=95"))
 
-
-
-
 #creating a black plot with title
 ggplot(DIABETES_CLASS,aes(x=age,y=weight)) + 
-  ggtitle(label = "Custom Title")
+  ggtitle(label = "Custom Title") +
+  geom_point()
  
 
 #Recreating Example 1 
