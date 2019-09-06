@@ -177,7 +177,8 @@ density_exp <- ggplot(DIABETES_CLASS,aes(x=weight,fill=sex,color=sex)) +
   geom_histogram(mapping = aes(y=stat(density)),
                  binwidth=5,
                  position="identity",
-                 alpha=.1) 
+                 alpha=.1) #alpha is transparency
+#Density plot is the percentage of area under the curve which in total area should be 1
 
 
 #Set the aesthetics manually.
@@ -267,7 +268,7 @@ ggplot(DIABETES_CLASS,aes(x=weight,fill=sex,color=sex)) +
   theme(legend.position = "top")
 
 
-## ggarrange
+## ggarrange a dashboard of all your plots
   
 ggarrange(barplot_exp,boxplot_exp, ncol = 1, nrow = 2)
 
